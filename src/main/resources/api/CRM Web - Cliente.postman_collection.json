@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "46e0a82a-fe34-43da-957e-21d19f9c9f44",
+		"name": "CRM Web - Cliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27532932",
+		"_collection_link": "https://warped-firefly-748319.postman.co/workspace/Team-Workspace~62cf569d-daee-4ae8-87d9-2d1be527e9f2/collection/27532932-46e0a82a-fe34-43da-957e-21d19f9c9f44?action=share&source=collection_link&creator=27532932"
+	},
+	"item": [
+		{
+			"name": "Cliente GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/listarClientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"listarClientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente POST CRM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Gui\", \r\n    \"cpf\": \"12345678912\",\r\n    \"idade\": 30,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880000\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/cadastrarCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"cadastrarCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente PUT CRM",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Gui\", \r\n    \"cpf\": \"12345678901\",\r\n    \"idade\": 31,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880000\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/atualizarCliente/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"atualizarCliente",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente DELETE CRM",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/excluirCliente/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"excluirCliente",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente por ID GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/listarClientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"listarClientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
