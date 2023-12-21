@@ -14,16 +14,16 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nomeCompleto;
 
-    @Column(length = 11)
+    @Column(length = 11, nullable = false)
     private String cpf;
 
-    @Column(length = 3)
+    @Column(length = 3, nullable = false)
     private int idade;
 
-    @Column
+    @Column(nullable = false)
     private String endereco;
 
     @Column(length = 11)

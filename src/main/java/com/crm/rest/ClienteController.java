@@ -4,6 +4,7 @@ import com.crm.dtos.ClienteDTO;
 import com.crm.models.Cliente;
 import com.crm.service.ClienteService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
+    @Autowired
     private ClienteService clienteService; // variavel para armazenar o ClientService
-
-    public ClienteController(ClienteService clienteService) {
-        this.clienteService = clienteService;
-
-    }
 
     @GetMapping("/listarClientes")// Obtém todos os clientes
     public ResponseEntity<Iterable<Cliente>> getClients() {
