@@ -3,18 +3,18 @@ import com.crm.dtos.ClienteDTO;
 import com.crm.exceptions.ResourceNotFoundException;
 import com.crm.models.Cliente;
 import com.crm.repositories.ClienteRepository;
+import com.crm.repositories.ClienteValidacaoRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
 public class ClienteService {
-    private final ClienteRepository clienteRepository;
-
-    // O construtor injeta o ClienteRepository para o serviço
-    public ClienteService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
+    @Autowired
+    private ClienteRepository clienteRepository;
+    @Autowired
+    private ClienteValidacaoRepository clienteValidacaoRepository;
 
     // GET todos os clientes - Método para retornar todos os clientes, o nome do método precisa ser em inglês
     public Iterable<Cliente> getClients() {
@@ -37,6 +37,9 @@ public class ClienteService {
     public Cliente addClient(ClienteDTO clienteDTO) {
         this.validateCliente(clienteDTO);
         ModelMapper mapper = new ModelMapper();
+        if (validarCPF(clienteDTO.getCpf())) {
+            throw new ResourceNotFoundException("CPF já cadastrado para outro cliente!");
+        }
         Cliente clienteToPersist = mapper.map(clienteDTO, Cliente.class);
         // Mapeia o ClienteDTO para a entidade Cliente e salva no repositório
         this.clienteRepository.save(clienteToPersist);
@@ -68,10 +71,36 @@ public class ClienteService {
 
     // Método para validação
     private void validateCliente(ClienteDTO clienteDTO) {
-
+        // Lida com os erros de validação, por exemplo, lançando uma exceção ou tratando os erros de outra forma
+        if(clienteDTO.getNomeCompleto().isEmpty()) {
+            throw new ResourceNotFoundException("O nome do cliente é obrigatório.");
+        }
         if (clienteDTO.getCpf().isEmpty()) {
-            // Lida com os erros de validação, por exemplo, lançando uma exceção ou tratando os erros de outra forma
-            throw new ResourceNotFoundException("Dados do cliente inválidos");
+            throw new ResourceNotFoundException("O CPF do cliente é obrigatório.");
+        }
+        if(!clienteDTO.getCpf().matches("\\d{11}")) {
+            throw new ResourceNotFoundException("CPF do cliente inválidos");
+        }
+        if(clienteDTO.getEndereco().isEmpty()) {
+            throw new ResourceNotFoundException("O endereço do cliente é obrigatório.");
+        }
+        if(!clienteDTO.getTelefone().matches("\\d{11}")) {
+            throw new ResourceNotFoundException("Telefone do cliente inválidos");
         }
     }
+    // Validação do CPF
+    public boolean validarCPF(String cpf) {
+        return clienteValidacaoRepository.existsByCpf(cpf);
+    }
+
+//    // Validação estados
+//    public boolean verificarUF(String uf) {
+//        EstadosDoBrasil estadosDoBrasil = EstadosDoBrasil.valueOf(uf);
+//        try {
+//            estadosDoBrasil.valueOf(uf);
+//            return true; // O estado é válido
+//        } catch (IllegalArgumentException e) {
+//            return false; // O estado é inválido
+//        }
+//    }
 }
