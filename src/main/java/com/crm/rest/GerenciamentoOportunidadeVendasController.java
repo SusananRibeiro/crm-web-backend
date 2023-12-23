@@ -17,23 +17,24 @@ public class GerenciamentoOportunidadeVendasController {
     @Autowired
     private GerenciamentoOportunidadeVendasService gerenciamentoOportunidadeVendasService;
 
-    @GetMapping("/listarGerenciamento")// Obtém todos os clientes
+    @GetMapping("/listarGerenciamento")
     public ResponseEntity<Iterable<GerenciamentoOportunidadeVendas>> getGerenciamentoOportunidadeVendas() {
         return ResponseEntity.ok(gerenciamentoOportunidadeVendasService.getGerenciamentoOportunidadeVendas());
     }
 
-    @GetMapping("/listarGerenciamento/{id}") // Obtém um cliente por ID
+    @GetMapping("/listarGerenciamento/{id}")
     public ResponseEntity<GerenciamentoOportunidadeVendas> getGerenciamentoOportunidadeVendasById(@PathVariable("id") int idGerenciamentoOportunidadeVendas) {
         return ResponseEntity.ok(gerenciamentoOportunidadeVendasService.getGerenciamentoOportunidadeVendasById(idGerenciamentoOportunidadeVendas));
     }
 
-    @PostMapping(("/cadastrarGerenciamento")) // Adiciona um novo cliente
-    public ResponseEntity<GerenciamentoOportunidadeVendas> addClient(@Valid @RequestBody GerenciamentoOportunidadeVendasDTO gerenciamentoOportunidadeVendasDTO) {
-        GerenciamentoOportunidadeVendas gerenciamentoOportunidadeVendas = gerenciamentoOportunidadeVendasService.addGerenciamentoOportunidadeVendas(gerenciamentoOportunidadeVendasDTO);
+    @PostMapping(("/cadastrarGerenciamento"))
+    public ResponseEntity<GerenciamentoOportunidadeVendas> addGerenciamentoOportunidadeVendas(@Valid @RequestBody GerenciamentoOportunidadeVendasDTO gerenciamentoOportunidadeVendasDTO) {
+        GerenciamentoOportunidadeVendas gerenciamentoOportunidadeVendas = gerenciamentoOportunidadeVendasService
+                .addGerenciamentoOportunidadeVendas(gerenciamentoOportunidadeVendasDTO);
         return new ResponseEntity<>(gerenciamentoOportunidadeVendas, HttpStatus.CREATED);
     }
 
-    @PutMapping("/atualizarGerenciamento/{id}") // Atualiza um cliente por ID
+    @PutMapping("/atualizarGerenciamento/{id}")
     public ResponseEntity<GerenciamentoOportunidadeVendas> updateGerenciamentoOportunidadeVendas(@PathVariable("id") int idGerenciamentoOportunidadeVendas,
                                                    @Valid @RequestBody GerenciamentoOportunidadeVendasDTO gerenciamentoOportunidadeVendasDTO) {
         GerenciamentoOportunidadeVendas updateGerenciamentoOportunidadeVendas =
@@ -41,7 +42,7 @@ public class GerenciamentoOportunidadeVendasController {
         return ResponseEntity.ok(updateGerenciamentoOportunidadeVendas);
     }
 
-    @DeleteMapping("/excluirGerenciamento/{id}") // Deleta um cliente por ID
+    @DeleteMapping("/excluirGerenciamento/{id}")
     public ResponseEntity<Void> deleteGerenciamentoOportunidadeVendasById(@PathVariable("id") int idGerenciamentoOportunidadeVendas) {
         gerenciamentoOportunidadeVendasService.deleteGerenciamentoOportunidadeVendasById(idGerenciamentoOportunidadeVendas);
         return ResponseEntity.noContent().build();

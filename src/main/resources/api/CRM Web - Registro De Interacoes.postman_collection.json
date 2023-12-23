@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "fdb6bdef-3301-4837-948c-604812c63a1a",
+		"name": "CRM Web - Registro De Interacoes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27532932",
+		"_collection_link": "https://warped-firefly-748319.postman.co/workspace/Team-Workspace~62cf569d-daee-4ae8-87d9-2d1be527e9f2/collection/27532932-fdb6bdef-3301-4837-948c-604812c63a1a?action=share&source=collection_link&creator=27532932"
+	},
+	"item": [
+		{
+			"name": "Registro De Interacoes GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registro/listarRegistro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registro",
+						"listarRegistro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro De Interacoes POST CRM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"descrição\": \"Teste descrição\",\r\n    \"dataDaInteracao\": \"2002-12-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/registro/cadastrarRegistro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registro",
+						"cadastrarRegistro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro De Interacoes PUT CRM",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"descrição\": \"Teste descrição Atualizar\",\r\n    \"dataDaInteracao\": \"2002-12-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/atualizarGerenciamento/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"atualizarGerenciamento",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro De Interacoes DELETE CRM",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registro/excluirRegistro/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registro",
+						"excluirRegistro",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro De Interacoes por ID GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registro/listarRegistro/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registro",
+						"listarRegistro",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

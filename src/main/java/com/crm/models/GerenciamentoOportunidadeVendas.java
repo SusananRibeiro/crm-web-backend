@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "gerenciamento_oportunidade_vendas")
-@AllArgsConstructor // vai configurar um construtor com todos os parâmetros
-@NoArgsConstructor // essa anotação é responsável por gerar um construtor sem parâmetros
+@AllArgsConstructor
+@NoArgsConstructor
 public class GerenciamentoOportunidadeVendas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
