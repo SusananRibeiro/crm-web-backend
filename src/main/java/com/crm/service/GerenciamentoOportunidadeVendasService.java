@@ -70,20 +70,11 @@ public class GerenciamentoOportunidadeVendasService {
     // Método para validação
     private void validateGerenciamentoOportunidadeVendas(GerenciamentoOportunidadeVendasDTO gerenciamentoOportunidadeVendasDTO) {
         // Lida com os erros de validação, por exemplo, lançando uma exceção ou tratando os erros de outra forma
-//        if(gerenciamentoOportunidadeVendasDTO.getNomeCompleto().isEmpty()) {
-//            throw new ResourceNotFoundException("O nome do cliente é obrigatório.");
-//        }
-//        if (gerenciamentoOportunidadeVendasDTO.getCpf().isEmpty()) {
-//            throw new ResourceNotFoundException("O CPF do cliente é obrigatório.");
-//        }
-//        if(!gerenciamentoOportunidadeVendasDTO.getCpf().matches("\\d{11}")) {
-//            throw new ResourceNotFoundException("CPF do cliente inválidos");
-//        }
-//        if(gerenciamentoOportunidadeVendasDTO.getEndereco().isEmpty()) {
-//            throw new ResourceNotFoundException("O endereço do cliente é obrigatório.");
-//        }
-//        if(!gerenciamentoOportunidadeVendasDTO.getTelefone().matches("\\d{11}")) {
-//            throw new ResourceNotFoundException("Telefone do cliente inválidos");
-//        }
+        if(gerenciamentoOportunidadeVendasDTO.getEstagioDaOportunidade() != null) {
+            throw new ResourceNotFoundException("O estagio da oportunidade é obrigatório.");
+        }
+        if (gerenciamentoOportunidadeVendasDTO.getValorEstimadoDaVenda() > 0) {
+            throw new ResourceNotFoundException("O valor estimado da venda é obrigatório.");
+        }
     }
 }

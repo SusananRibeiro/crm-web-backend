@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "37acb3e4-7c48-499f-8dac-19748a179343",
+		"name": "CRM Web - Gerenciamento Oportunidade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27532932",
+		"_collection_link": "https://warped-firefly-748319.postman.co/workspace/Team-Workspace~62cf569d-daee-4ae8-87d9-2d1be527e9f2/collection/27532932-37acb3e4-7c48-499f-8dac-19748a179343?action=share&source=collection_link&creator=27532932"
+	},
+	"item": [
+		{
+			"name": "Gerenciamento Oportunidade GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/listarGerenciamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"listarGerenciamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerenciamento Oportunidade POST CRM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nomeCompleto\": \"Nome Completo\",\r\n    \"cpf\": \"12345678922\",\r\n    \"idade\": 30,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880011\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/cadastrarGerenciamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"cadastrarGerenciamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerenciamento Oportunidade PUT CRM",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Gui\", \r\n    \"cpf\": \"12345678901\",\r\n    \"idade\": 29,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880000\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/atualizarGerenciamento/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"atualizarGerenciamento",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerenciamento Oportunidade DELETE CRM",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/excluirGerenciamento/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"excluirGerenciamento",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerenciamento Oportunidade por ID GET CRM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gerenciamento/listarGerenciamento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gerenciamento",
+						"listarGerenciamento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

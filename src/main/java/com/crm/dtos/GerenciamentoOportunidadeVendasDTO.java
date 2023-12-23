@@ -13,7 +13,6 @@ public class GerenciamentoOportunidadeVendasDTO {
 
     @NotBlank // campo obrigatório, é uma validação
     private EstagioDaOportunidade estagioDaOportunidade; // PROSPECT, QUALIFICAÇÃO, PROPOSTA, FECHAMENTO
-
     @NotBlank // campo obrigatório, é uma validação
     private double valorEstimadoDaVenda;
     @NotBlank // campo obrigatório, é uma validação
