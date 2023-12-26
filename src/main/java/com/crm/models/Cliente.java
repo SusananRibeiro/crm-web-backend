@@ -1,30 +1,51 @@
 package com.crm.models;
+import com.crm.models.enums.EstadosDoBrasil;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
-@Entity
-@Table(name = "clientes")
-@AllArgsConstructor // vai configurar um construtor com todos os parâmetros
-@NoArgsConstructor // essa anotação é responsável por gerar um construtor sem parâmetros
+@Entity(name = "clientes")
+@SQLDelete(sql = "UPDATE clientes SET deleted_at = now() WHERE id=?")
+@Where(clause = "deleted_at is null")
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "nome_completo", nullable = false)
     private String nomeCompleto;
 
-    @Column(length = 11, nullable = false)
+    @Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column(length = 3, nullable = false)
-    private int idade;
+    @Column(name = "data_nascimento", nullable = false)
+    private LocalDate dataNascimento;
 
     @Column(nullable = false)
-    private String endereco;
+    private String rua;
+
+    @Column
+    private String numero;
+
+    @Column(nullable = false)
+    private String bairro;
+
+    @Column(nullable = false)
+    private String cidade;
+
+    @Column(nullable = false, length = 2)
+    @Enumerated(EnumType.STRING)
+    private EstadosDoBrasil uf;
+
+    @Column(nullable = false)
+    private int cep;
+
+    @Column(nullable = false)
+    private String pais;
 
     @Column(length = 11)
     private String telefone;
@@ -32,6 +53,11 @@ public class Cliente {
     @Column
     private String email;
 
-    // Não precisa gerar Gets e Sets, pois o "@Data" vai fazer isso
+    @Column
+    private String complemento;
 
+    @Column
+    private LocalDateTime deletedAt;
+
+    // Não precisa gerar Gets e Sets, pois o "@Data" vai fazer isso
 }

@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nomeCompleto\": \"Gui\", \r\n    \"cpf\": \"12345678912\",\r\n    \"idade\": 30,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880000\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"raw": "{ \r\n    \"nomeCompleto\": \"Nome Completo\",\r\n    \"cpf\": \"12345678912\",\r\n    \"dataNascimento\": \"2002-12-23\",\r\n    \"rua\": \"Rua Teste\",\r\n    \"numero\": \"100\",\r\n    \"bairro\": \"Bairrp Teste\",\r\n    \"cidade\": \"Cidade Teste\",\r\n    \"uf\": \"SP\",\r\n    \"cep\": \"88800000\",\r\n    \"pais\": \"Pais Teste\",\r\n    \"telefone\": \"48988880011\",\r\n    \"email\": \"nome1@mail.com\",\r\n    \"complemento\": \"Sem complemento\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nomeCompleto\": \"Gui\", \r\n    \"cpf\": \"12345678901\",\r\n    \"idade\": 31,\r\n    \"endereco\": \"teste do endenço novas atualizações\",\r\n    \"telefone\": \"48988880000\",\r\n    \"email\": \"gui@mail.com\"\r\n}",
+					"raw": "{ \r\n    \"nomeCompleto\": \"Nome Completo\",\r\n    \"cpf\": \"12345678912\",\r\n    \"dataNascimento\": \"2002-12-23\",\r\n    \"rua\": \"Rua Teste\",\r\n    \"numero\": \"100\",\r\n    \"bairro\": \"Bairrp Teste\",\r\n    \"cidade\": \"Cidade Teste\",\r\n    \"uf\": \"SP\",\r\n    \"cep\": \"88800000\",\r\n    \"pais\": \"Pais Teste\",\r\n    \"telefone\": \"48988880011\",\r\n    \"email\": \"nome1@mail.com\",\r\n    \"complemento\": \"Sem complemento\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,7 +92,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/excluirCliente/7",
+					"raw": "http://localhost:8080/cliente/excluirCliente/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -101,7 +101,7 @@
 					"path": [
 						"cliente",
 						"excluirCliente",
-						"7"
+						"2"
 					]
 				}
 			},
@@ -113,7 +113,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/listarClientes/2",
+					"raw": "http://localhost:8080/cliente/listarClientes/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,7 +122,7 @@
 					"path": [
 						"cliente",
 						"listarClientes",
-						"2"
+						"1"
 					]
 				}
 			},
