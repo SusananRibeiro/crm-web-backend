@@ -1,45 +1,80 @@
 package com.crm.rest;
 
-import com.crm.dtos.ClienteDTO;
-import com.crm.models.Cliente;
+import com.crm.dtos.ClienteRequest;
+import com.crm.dtos.ClienteResponse;
+import com.crm.exceptions.ResourceNotFoundException;
+import com.crm.exceptions.utils.ResponseUtil;
+import com.crm.repositories.ClienteRespository;
 import com.crm.service.ClienteService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.List;
+
+@Controller
 @RequestMapping("/cliente")
 public class ClienteController {
     @Autowired
-    private ClienteService clienteService; // variavel para armazenar o ClientService
+    private ClienteService clienteService;
+    @Autowired
+    private ClienteRespository clientesRespository;
 
-    @GetMapping("/listarClientes")// Obtém todos os clientes
-    public ResponseEntity<Iterable<Cliente>> getClients() {
-        return ResponseEntity.ok(clienteService.getClients());
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(path = "/listarClientes")
+    public ResponseEntity<List<ClienteResponse>> carregarClientes(){
+        return ResponseEntity.ok(clienteService.carregarClientes());
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/listarClientes/{id}")
+    public ResponseEntity<ClienteResponse> carregarClienteById(@PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(clienteService.carregarClienteById(id));
     }
 
-    @GetMapping("/listarClientes/{id}") // Obtém um cliente por ID
-    public ResponseEntity<Cliente> getClientById(@PathVariable("id") int idCliente) {
-        return ResponseEntity.ok(clienteService.getClientById(idCliente));
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/cadastrarCliente")
+    public ResponseEntity<?> criarCliente(@RequestBody ClienteRequest clienteRequest){
+
+        try{
+            return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.criarCliente(clienteRequest));
+        } catch (ResourceNotFoundException e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity
+                    .internalServerError()
+                    .body(ResponseUtil.responseMapper("Erro não mapeado: " + e.getMessage()));
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/atualizarCliente/{id}")
+    public ResponseEntity<?> atualizarCliente
+            (@PathVariable Long id,
+             @RequestBody ClienteRequest clienteRequest){
+        try {
+            return ResponseEntity.ok(
+                    clienteService.atualizarCliente(id, clienteRequest));
+        } catch (ResourceNotFoundException e){
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity
+                    .internalServerError()
+                    .body(ResponseUtil.responseMapper("Erro não mapeado: " + e.getMessage()));
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/excluirCliente/{id}")
+    public ResponseEntity<Void> deletarCliente(@PathVariable Long id){
+        clienteService.deletarCliente(id);
+
+        return ResponseEntity.ok(null);
     }
 
-    @PostMapping(("/cadastrarCliente")) // Adiciona um novo cliente
-    public ResponseEntity<Cliente> addClient(@Valid @RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = clienteService.addClient(clienteDTO);
-        return new ResponseEntity<>(cliente, HttpStatus.CREATED);
-    }
 
-    @PutMapping("/atualizarCliente/{id}") // Atualiza um cliente por ID
-    public ResponseEntity<Cliente> updateClient(@PathVariable("id") int idCliente, @Valid @RequestBody ClienteDTO clienteDTO) {
-        Cliente updatedCliente = clienteService.updateClient(idCliente, clienteDTO);
-        return ResponseEntity.ok(updatedCliente);
-    }
 
-    @DeleteMapping("/excluirCliente/{id}") // Deleta um cliente por ID
-    public ResponseEntity<Void> deleteClientById(@PathVariable("id") int idCliente) {
-        clienteService.deleteClientById(idCliente);
-        return ResponseEntity.noContent().build();
-    }
 }
