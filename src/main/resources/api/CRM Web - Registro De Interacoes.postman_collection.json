@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"descrição\": \"Teste descrição\",\r\n    \"dataDaInteracao\": \"2002-12-23\"\r\n}",
+					"raw": "{ \r\n    \"dataEHora\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descrição\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"descrição\": \"Teste descrição Atualizar\",\r\n    \"dataDaInteracao\": \"2002-12-23\"\r\n}",
+					"raw": "{ \r\n    \"dataEHora\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descrição\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
