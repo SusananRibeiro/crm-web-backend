@@ -19,7 +19,7 @@ public class Cliente {
     @Column(name = "nome_completo", nullable = false)
     private String nomeCompleto;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, length = 11, unique = true)
     private String cpf;
 
     @Column(name = "data_nascimento", nullable = false)
@@ -41,7 +41,7 @@ public class Cliente {
     @Enumerated(EnumType.STRING)
     private EstadosDoBrasil uf;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 8)
     private int cep;
 
     @Column(nullable = false)

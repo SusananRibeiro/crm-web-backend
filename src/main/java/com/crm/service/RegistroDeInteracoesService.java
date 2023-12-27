@@ -61,13 +61,13 @@ public class RegistroDeInteracoesService {
                                     .registroToRegistroDeInteracoesResponse(registroDeInteracoesAtualizado);
             return out;
         } else {
-            throw new ResourceNotFoundException("Registro de interações informado não existe!");
+            throw new ResourceNotFoundException("Registro de interações não existe!");
         }
     }
     // DELETE
     public void deletarRegistroDeInteracoes(Long id) {
         if (!this.registroDeInteracoesRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Cliente não existe");
+            throw new ResourceNotFoundException("Registro de interações não existe");
         }
         registroDeInteracoesRepository.deleteById(id);
     }
@@ -93,6 +93,10 @@ public class RegistroDeInteracoesService {
         if(StringUtil.validarString(registroDeInteracoesRequest.getDescricao())){
             throw new ResourceNotFoundException("A descrição é obrigatória.");
         }
+        if(verificarStatusDaInterferencia(String.valueOf(registroDeInteracoesRequest.getStatusDaInterferencia())) == false) {
+            throw new ResourceNotFoundException("Status da interação inválido!");
+        }
+
     }
 
     // Validação Status da Interferência
