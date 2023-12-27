@@ -7,10 +7,9 @@ import com.crm.mappers.ClienteMapper;
 import com.crm.models.Cliente;
 import com.crm.models.enums.EstadosDoBrasil;
 import com.crm.repositories.ClienteRelatorioRepository;
-import com.crm.repositories.ClienteRespository;
+import com.crm.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -18,7 +17,7 @@ import java.util.stream.Collectors;
 @Service
 public class ClienteService {
     @Autowired
-    private ClienteRespository clienteRepository;
+    private ClienteRepository clienteRepository;
     @Autowired
     private ClienteRelatorioRepository clienteRelatorioRepository;
 // GET de todos
@@ -29,9 +28,7 @@ public class ClienteService {
                 .stream()
                 .map(ClienteMapper:: clientesToClientesResponseDom)
                 .collect(Collectors.toList());
-
         return out;
-
     }
 
 // POST

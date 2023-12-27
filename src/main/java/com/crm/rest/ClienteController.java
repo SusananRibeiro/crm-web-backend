@@ -4,7 +4,7 @@ import com.crm.dtos.ClienteRequest;
 import com.crm.dtos.ClienteResponse;
 import com.crm.exceptions.ResourceNotFoundException;
 import com.crm.exceptions.utils.ResponseUtil;
-import com.crm.repositories.ClienteRespository;
+import com.crm.repositories.ClienteRepository;
 import com.crm.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +19,8 @@ import java.util.List;
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
-    @Autowired
-    private ClienteRespository clientesRespository;
+//    @Autowired
+//    private ClienteRepository clientesRespository;
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/listarClientes")
@@ -74,7 +74,4 @@ public class ClienteController {
 
         return ResponseEntity.ok(null);
     }
-
-
-
 }
