@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"dataEHora\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descrição\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
+					"raw": "{ \r\n    \"dataDaInteracao\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descricao\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"dataEHora\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descrição\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
+					"raw": "{ \r\n    \"dataDaInteracao\": \"2023-12-23T00:18:30\",\r\n    \"canalDeComunicacao\": \"Canal de Comunicacao Teste Atualizar\",\r\n    \"responsavelPelaInteracao\": \"Responsavel pela interacao Teste\",\r\n    \"descricao\": \"Teste descrição\",\r\n    \"statusDaInterferencia\": \"RESOLVIDA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,16 +71,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/gerenciamento/atualizarGerenciamento/3",
+					"raw": "http://localhost:8080/registro/atualizarRegistro/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"gerenciamento",
-						"atualizarGerenciamento",
-						"3"
+						"registro",
+						"atualizarRegistro",
+						"2"
 					]
 				}
 			},
@@ -113,7 +113,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/registro/listarRegistro/1",
+					"raw": "http://localhost:8080/registro/listarRegistro/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,7 +122,7 @@
 					"path": [
 						"registro",
 						"listarRegistro",
-						"1"
+						"2"
 					]
 				}
 			},
