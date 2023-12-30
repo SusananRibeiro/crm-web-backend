@@ -20,6 +20,7 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
     @Autowired
     private ClienteRelatorioRepository clienteRelatorioRepository;
+
 // GET de todos
     public List<ClienteResponse> carregarClientes() {
         List<Cliente> clientesList = clienteRepository.findAll();
