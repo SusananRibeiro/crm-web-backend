@@ -60,4 +60,5 @@ public class Cliente {
     private LocalDateTime deletedAt;
 
     // Não precisa gerar Gets e Sets, pois o "@Data" vai fazer isso
+
 }

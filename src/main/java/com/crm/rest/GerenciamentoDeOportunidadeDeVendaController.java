@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/gerenciamento")
+@RequestMapping("/gerenciamentos")
 public class GerenciamentoDeOportunidadeDeVendaController {
     @Autowired
     private GerenciamentoDeOportunidadeDeVendaService gerenciamentoDeOportunidadeDeVendaService;

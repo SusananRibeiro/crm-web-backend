@@ -13,14 +13,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/listarClientes",
+					"raw": "http://localhost:8080/clientes/listarClientes",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cliente",
+						"clientes",
 						"listarClientes"
 					]
 				}
@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n    \"nomeCompleto\": \"Nome Completo\",\r\n    \"cpf\": \"12345678912\",\r\n    \"dataNascimento\": \"2002-12-23\",\r\n    \"rua\": \"Rua Teste\",\r\n    \"numero\": \"100\",\r\n    \"bairro\": \"Bairrp Teste\",\r\n    \"cidade\": \"Cidade Teste\",\r\n    \"uf\": \"SP\",\r\n    \"cep\": \"88800000\",\r\n    \"pais\": \"Pais Teste\",\r\n    \"telefone\": \"48988880011\",\r\n    \"email\": \"nome1@mail.com\",\r\n    \"complemento\": \"Sem complemento\"\r\n}",
+					"raw": "{ \r\n    \"nomeCompleto\": \"Nome Completo\",\r\n    \"cpf\": \"12345678912\",\r\n    \"dataNascimento\": \"2002-12-23\",\r\n    \"rua\": \"Rua Teste\",\r\n    \"numero\": \"100\",\r\n    \"bairro\": \"Bairrp Teste\",\r\n    \"cidade\": \"Cidade Teste\",\r\n    \"uf\": \"ES\",\r\n    \"cep\": \"88800000\",\r\n    \"pais\": \"Pais Teste\",\r\n    \"telefone\": \"48988880011\",\r\n    \"email\": \"nome1@mail.com\",\r\n    \"complemento\": \"Sem complemento\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,14 +42,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cliente/cadastrarCliente",
+					"raw": "http://localhost:8080/clientes/cadastrarCliente",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cliente",
+						"clientes",
 						"cadastrarCliente"
 					]
 				}
@@ -71,14 +71,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cliente/atualizarCliente/2",
+					"raw": "http://localhost:8080/clientes/atualizarCliente/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cliente",
+						"clientes",
 						"atualizarCliente",
 						"2"
 					]
@@ -92,14 +92,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/excluirCliente/2",
+					"raw": "http://localhost:8080/clientes/excluirCliente/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cliente",
+						"clientes",
 						"excluirCliente",
 						"2"
 					]
@@ -113,14 +113,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cliente/listarClientes/1",
+					"raw": "http://localhost:8080/clientes/listarClientes/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cliente",
+						"clientes",
 						"listarClientes",
 						"1"
 					]
