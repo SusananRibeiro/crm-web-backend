@@ -93,20 +93,17 @@ public class RegistroDeInteracoesService {
         if(StringUtil.validarString(registroDeInteracoesRequest.getDescricao())){
             throw new ResourceNotFoundException("A descrição é obrigatória.");
         }
-        if(verificarStatusDaInterferencia(String.valueOf(registroDeInteracoesRequest.getStatusDaInterferencia())) == false) {
-            throw new ResourceNotFoundException("Status da interação inválido!");
-        }
 
     }
 
-    // Validação Status da Interferência
-    public boolean verificarStatusDaInterferencia(String status) {
-        StatusDaInterferencia statusDaInterferencia = StatusDaInterferencia.valueOf(status);
-        try {
-            statusDaInterferencia.valueOf(status);
-            return true;
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-    }
+//    // Validação Status da Interferência
+//    public boolean verificarStatusDaInterferencia(String status) {
+//        StatusDaInterferencia statusDaInterferencia = StatusDaInterferencia.valueOf(status);
+//        try {
+//            statusDaInterferencia.valueOf(status);
+//            return true;
+//        } catch (IllegalArgumentException e) {
+//            return false;
+//        }
+//    }
 }
