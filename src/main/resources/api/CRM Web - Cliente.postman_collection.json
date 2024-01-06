@@ -71,7 +71,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/clientes/atualizarCliente/2",
+					"raw": "http://localhost:8080/clientes/atualizarCliente/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,7 +80,7 @@
 					"path": [
 						"clientes",
 						"atualizarCliente",
-						"2"
+						"1"
 					]
 				}
 			},

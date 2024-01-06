@@ -45,7 +45,7 @@ public class ClienteService {
     }
 
 // PUT
-    public ClienteResponse atualizarCliente(Long id, ClienteRequest clientesRequestDom) throws ResourceNotFoundException {
+    public boolean atualizarCliente(Long id, ClienteRequest clientesRequestDom) throws ResourceNotFoundException {
         Optional<Cliente> clienteExistente = clienteRepository.findById(id);
 
         if (clienteExistente.isPresent()) {
@@ -82,7 +82,7 @@ public class ClienteService {
 
             // Criar e retornar a resposta de sucesso com os dados atualizados do cliente
             ClienteResponse out = ClienteMapper.clientesToClientesResponseDom(clienteAtualizado);
-            return out;
+            return true;
         } else {
             throw new ResourceNotFoundException("Cliente informado não existe!");
         }

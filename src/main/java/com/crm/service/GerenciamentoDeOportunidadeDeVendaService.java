@@ -49,7 +49,7 @@ public class GerenciamentoDeOportunidadeDeVendaService {
     }
 
     // PUT
-    public GerenciamentoDeOportunidadeDeVendaResponse atualizarGerenciamentoDeOportunidadeDeVenda
+    public boolean atualizarGerenciamentoDeOportunidadeDeVenda
             (Long id, GerenciamentoDeOportunidadeDeVendaRequest gerenciamentoDeOportunidadeDeVendaRequest) throws ResourceNotFoundException {
         this.validacaoManutencaoGerenciamentoDeOportunidadeDeVenda(gerenciamentoDeOportunidadeDeVendaRequest);
 
@@ -74,7 +74,7 @@ public class GerenciamentoDeOportunidadeDeVendaService {
 
         GerenciamentoDeOportunidadeDeVendaResponse out = GerenciamentoDeOportunidadeDeVendaMapper
                 .gerenciamentoToGerenciamentoDeOportunidadeDeVendaResponse(gerenciamentoDeOportunidadeDeVenda.get());
-        return out;
+        return true;
     }
     // DELETE
     public void deletarGerenciamentoDeOportunidadeDeVenda(Long id) {
