@@ -39,7 +39,7 @@ public class RegistroDeInteracoesService {
     }
 
     // PUT
-    public RegistroDeInteracoesResponse atualizarRegistroDeInteracoes(Long id, RegistroDeInteracoesRequest registroDeInteracoesRequest)
+    public boolean atualizarRegistroDeInteracoes(Long id, RegistroDeInteracoesRequest registroDeInteracoesRequest)
             throws ResourceNotFoundException {
         Optional<RegistroDeInteracoes> registroDeInteracoesExistente = registroDeInteracoesRepository.findById(id);
 
@@ -59,7 +59,7 @@ public class RegistroDeInteracoesService {
             // Criar e retornar a resposta de sucesso com os dados atualizados do registroDeInteracoes
         RegistroDeInteracoesResponse out = RegistroDeInteracoesMapper
                                     .registroToRegistroDeInteracoesResponse(registroDeInteracoesAtualizado);
-            return out;
+            return true;
         } else {
             throw new ResourceNotFoundException("Registro de interações não existe!");
         }

@@ -19,8 +19,6 @@ import java.util.List;
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
-//    @Autowired
-//    private ClienteRepository clientesRespository;
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path = "/listarClientes")
