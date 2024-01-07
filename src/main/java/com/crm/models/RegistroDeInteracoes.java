@@ -27,4 +27,6 @@ public class RegistroDeInteracoes {
     @Column
     private LocalDateTime deletedAt;
 
+    // Não precisa gerar Gets e Sets, pois o "@Data" vai fazer isso
+
 }
