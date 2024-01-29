@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,7 +16,7 @@ public class RegistroDeInteracoes {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     @Column
-    private LocalDateTime dataDaInteracao;
+    private LocalDate dataDaInteracao;
     @Column
     private String canalDeComunicacao; // ex: telefone, e-mail, chat online, pessoalmente ou por outro meio
     @Column
