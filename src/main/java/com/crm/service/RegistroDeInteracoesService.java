@@ -90,6 +90,9 @@ public class RegistroDeInteracoesService {
         if (registroDeInteracoesRequest.getDataDaInteracao() == null) {
             throw new ResourceNotFoundException("A data da interação é obrigatória.");
         }
+        if(StringUtil.validarString(registroDeInteracoesRequest.getResponsavelPelaInteracao())){
+            throw new ResourceNotFoundException("O nome do responsável é obrigatório.");
+        }
         if(StringUtil.validarString(registroDeInteracoesRequest.getDescricao())){
             throw new ResourceNotFoundException("A descrição é obrigatória.");
         }
